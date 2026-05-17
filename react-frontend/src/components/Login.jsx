@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
@@ -73,7 +73,7 @@ const Login = () => {
           </button>
         </form>
         <p className="register-link">
-          ¿No tienes cuenta? <a href="/register">Regístrate aquí</a>
+          ¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link>
         </p>
       </div>
     </div>

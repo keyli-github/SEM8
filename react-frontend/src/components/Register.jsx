@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
 const Register = () => {
@@ -124,7 +124,7 @@ const Register = () => {
           </button>
         </form>
         <p className="login-link">
-          ¿Ya tienes cuenta? <a href="/login">Inicia sesión aquí</a>
+          ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>
         </p>
       </div>
     </div>
