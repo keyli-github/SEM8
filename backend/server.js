@@ -1,3 +1,7 @@
+// Cargar variables de entorno desde .env
+import dotenv from "dotenv";
+dotenv.config();
+
 // Importa Express para crear la aplicación web
 import express from "express";
 // Importa CORS para permitir solicitudes desde otros dominios (por ejemplo, desde el frontend)
