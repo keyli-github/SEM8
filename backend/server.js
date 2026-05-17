@@ -41,9 +41,26 @@ app.use("/api/test", userRoutes);
 // Define el puerto en el que se ejecutará el servidor. Usa 3000 por defecto si no hay una variable de entorno
 const PORT = process.env.PORT || 3001;
 
+const initial = async () => {
+	try {
+		const count = await db.role.count();
+		if (count === 0) {
+			await db.role.bulkCreate([
+				{ name: "user" },
+				{ name: "moderator" },
+				{ name: "admin" },
+			]);
+			console.log("Default roles created.");
+		}
+	} catch (error) {
+		console.error("Error seeding roles:", error);
+	}
+};
+
 // Sincroniza los modelos con la base de datos (sin borrar datos si force es false)
-db.sequelize.sync({ force: false }).then(() => {
+db.sequelize.sync({ force: false }).then(async () => {
 	console.log("Database synchronized");
+	await initial();
 	// Luego inicia el servidor y escucha en el puerto definido
 	app.listen(PORT, () => {
 		console.log(`Server is running on port ${PORT}.`);

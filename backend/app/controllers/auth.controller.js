@@ -13,6 +13,9 @@ export const signup = async (req, res) => {
 		const hashedPassword = await bcrypt.hash(password, 8);
 		// Busca el rol "user" en la base de datos para asignarlo por defecto
 		const userRole = await Role.findOne({ where: { name: "user" } });
+		if (!userRole) {
+			return res.status(500).json({ message: "Default role 'user' not found." });
+		}
 		// Crea un nuevo usuario con los datos proporcionados y la contraseña encriptada
 		const user = await User.create({
 			username,
