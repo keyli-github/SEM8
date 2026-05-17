@@ -1,0 +1,11 @@
+# Render deployment configuration for this Node.js app
+services:
+  - type: web_service
+    name: lab07
+    env: node
+    rootDirectory: .
+    buildCommand: pnpm install
+    startCommand: pnpm start
+    autoDeploy: true
+    # Set these environment variables in your Render dashboard:
+    # JWT_SECRET, DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT, DB_DIALECT

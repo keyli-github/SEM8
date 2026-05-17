@@ -1,0 +1,21 @@
+{
+  "name": "lab07-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo con backend Express y frontend React",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "react-frontend"
+  ],
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "start:backend": "pnpm -C backend start",
+    "dev:backend": "pnpm -C backend dev",
+    "dev:frontend": "pnpm -C react-frontend dev",
+    "test": "pnpm -r test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
