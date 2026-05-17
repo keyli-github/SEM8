@@ -7,4 +7,4 @@ services:
     autoDeploy: true
     envVars:
       - key: VITE_API_URL
-        value: https://lab07-backend.onrender.com/api
+        value: https://lab07-backend-bh5m.onrender.com/api

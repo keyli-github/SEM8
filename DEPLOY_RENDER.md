@@ -85,13 +85,13 @@ En `react-frontend/src/services/AuthService.js`, cambia:
 const API_URL = "/api/auth/";
 
 // Producción - Descomenta la línea según tu dominio en Render
-// const API_URL = "https://lab07-backend.onrender.com/api/auth/";
+// const API_URL = "https://lab07-backend-bh5m.onrender.com/api/auth/";
 ```
 
 O mejor, usa una variable de entorno. Crea `.env` en `react-frontend/`:
 
 ```env
-VITE_API_URL=https://lab07-backend.onrender.com/api
+VITE_API_URL=https://lab07-backend-bh5m.onrender.com/api
 ```
 
 Luego en `AuthService.js`:
@@ -122,7 +122,7 @@ render deploy
 
 ### Backend URL (después de desplegar)
 ```
-https://lab07-backend.onrender.com
+https://lab07-backend-bh5m.onrender.com
 ```
 
 ### Frontend URL (después de desplegar)
