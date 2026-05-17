@@ -1,6 +1,12 @@
 import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_API_URL || "https://lab07-backend-bh5m.onrender.com/api";
+const rawApiBase = import.meta.env.VITE_API_URL;
+const API_BASE = rawApiBase
+  ? rawApiBase.replace(
+      /^(https?:\/\/)?lab07-backend\.onrender\.com\/api/i,
+      "https://lab07-backend-bh5m.onrender.com/api"
+    )
+  : "https://lab07-backend-bh5m.onrender.com/api";
 const API_URL = API_BASE.replace(/\/$/, "") + "/auth/";
 
 const register = (username, email, password) => {
