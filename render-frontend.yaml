@@ -1,0 +1,10 @@
+# Render deployment configuration for React frontend
+services:
+  - type: static_site
+    name: lab07-frontend
+    buildCommand: cd react-frontend && pnpm install && pnpm build
+    staticPublishPath: react-frontend/dist
+    autoDeploy: true
+    envVars:
+      - key: VITE_API_URL
+        value: https://lab07-backend.onrender.com/api

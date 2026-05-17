@@ -1,11 +1,16 @@
-# Render deployment configuration for this Node.js app
+# Render deployment configuration for this Node.js app (Backend)
 services:
   - type: web_service
-    name: lab07
+    name: lab07-backend
     env: node
-    rootDirectory: .
+    rootDirectory: backend
     buildCommand: pnpm install
     startCommand: pnpm start
     autoDeploy: true
-    # Set these environment variables in your Render dashboard:
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+    # Add these environment variables in your Render dashboard:
     # JWT_SECRET, DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT, DB_DIALECT
